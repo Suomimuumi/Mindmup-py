@@ -20,4 +20,4 @@ MindMup format.
   - Value should appear at format "<key> = <value>", for example: "Root->Child->Child's_child = alex".
   - If node does not have any children, make sure that it has a value at format: "<key> = <data>".
 
-![This is an image](https://www.linkpicture.com/download.php?filename=Capture_189.png)
+![This is an image](https://www.mindmup.com/assets/logo_256.png)
