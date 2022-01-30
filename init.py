@@ -7,7 +7,7 @@ open("data.json", "w+").write(json.dumps(json_data, indent=4))
 new_json = json.loads("{}")
 
 
-def checkInt(str):
+def checkIn(str):
     if str[0] in ('-', '+'):
         return str[1:].isdigit()
     return str.isdigit()
