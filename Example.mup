@@ -1,0 +1,49 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "Parent",
+      "id": 1,
+      "attr": {
+        "position": [
+          -79,
+          102,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "Child",
+          "id": 2,
+          "ideas": {
+            "1": {
+              "title": "Child's_child = Alex",
+              "id": 3
+            },
+            "2": {
+              "title": "Child's_child's_brother = Mat",
+              "id": 4
+            }
+          }
+        },
+        "11": {
+          "title": "Child's_sister = Lia",
+          "id": 5
+        }
+      }
+    },
+    "2": {
+      "title": "God = Allfather",
+      "id": 6,
+      "attr": {
+        "position": [
+          -183,
+          39,
+          1
+        ]
+      }
+    }
+  },
+  "title": "Parent"
+}
