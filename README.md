@@ -9,7 +9,7 @@ The project is 100% open source. So if it doesen't work: you can always code it 
 How it works:
 
 1. Download MindMup-py.exe. It might warn about virus/troijan. Because i'm not a verified publisher and pepole make viruses with python. So just pass it.
-2. In MindMup, go to File -> Download As -> MindMup.
+2. In MindMup, go to ```File -> Download As -> MindMup.```
 3. Fire up the software.
 4. It will ask input for .mup file. So insert the path of your mindmap file.
 5. If it can convert the file, enter the path you want to save your new shiny .json file (Remember to enter <filename>.json at the end of the path).
