@@ -7,7 +7,7 @@ open("data.json", "w+").write(json.dumps(json_data, indent=4))
 new_json = json.loads("{}")
 
 
-def checkIn(str):
+def checkInt(str):
     if str[0] in ('-', '+'):
         return str[1:].isdigit()
     return str.isdigit()
@@ -44,5 +44,5 @@ for i in json_data["ideas"]: # Loop through every root
                         new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1]
 
 
-open("new_json.json", "w+").write(json.dumps(new_json, indent=4))
+open(input("Where do you want to save this file: "), "w+").write(json.dumps(new_json, indent=4))
 
