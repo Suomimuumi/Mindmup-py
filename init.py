@@ -2,10 +2,15 @@ import os
 import sys
 import json
 
-json_data = json.loads(open("C:\\Users\\arttu\\Downloads\\An untitled mindmap.mup", "r").read())
+json_data = json.loads(open(input("Insert .mup file: "), "r").read())
 open("data.json", "w+").write(json.dumps(json_data, indent=4))
 new_json = json.loads("{}")
 
+
+def checkInt(str):
+    if str[0] in ('-', '+'):
+        return str[1:].isdigit()
+    return str.isdigit()
 
 #SET UP ROOTS AND ROOT VALUES
 for i in json_data["ideas"]: # Loop through every root
@@ -28,9 +33,15 @@ for i in json_data["ideas"]: # Loop through every root
                 if("ideas" in json_data["ideas"][i]["ideas"][y]):
                     new_json[x][json_data["ideas"][i]["ideas"][y]["title"]] = {}
                     for a in json_data["ideas"][i]["ideas"][y]["ideas"]:
-                        new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1]
+                        if(checkInt(json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1])):
+                            new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = int(json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1])
+                        else:
+                            new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1]
                 else:
-                    new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1]
+                    if(checkInt(json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1])):
+                        new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = int(json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1])
+                    else:
+                        new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1]
 
 
 open("new_json.json", "w+").write(json.dumps(new_json, indent=4))
