@@ -3,7 +3,6 @@ import sys
 import json
 
 json_data = json.loads(open(input("Insert .mup file: "), "r").read())
-open("data.json", "w+").write(json.dumps(json_data, indent=4))
 new_json = json.loads("{}")
 
 
