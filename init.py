@@ -34,11 +34,19 @@ for i in json_data["ideas"]: # Loop through every root
                     for a in json_data["ideas"][i]["ideas"][y]["ideas"]:
                         if(checkInt(json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1])):
                             new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = int(json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1])
+                        elif(json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1] == "false"):
+                            new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = False
+                        elif(json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1] == "true"):
+                            new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = True
                         else:
                             new_json[x][json_data["ideas"][i]["ideas"][y]["title"]][json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["ideas"][a]["title"].split(" = ")[1]
                 else:
                     if(checkInt(json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1])):
                         new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = int(json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1])
+                    elif(json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1] == "false"):
+                        new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = False
+                    elif(json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1] == "true"):
+                        new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = True
                     else:
                         new_json[x][json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[0]] = json_data["ideas"][i]["ideas"][y]["title"].split(" = ")[1]
 
