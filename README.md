@@ -19,3 +19,5 @@ MindMup format.
   - Currently you can have only 2 parents. for example: "Root->Child->Child's_child", so make sure that every value has maximium of 2 parents.
   - Value should appear at format "<key> = <value>", for example: "Root->Child->Child's_child = alex".
   - If node does not have any children, make sure that it has a value at format: "<key> = <data>".
+
+![This is an image](https://www.linkpicture.com/download.php?filename=Capture_189.png)
